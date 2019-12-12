@@ -32,7 +32,7 @@ module.exports = class LootTable {
 
 		return this;
 	}
-
+	
 	roll() {
 		// If this loot table has no items, return null;
 		if (this.length === 0) return null;
@@ -67,5 +67,49 @@ module.exports = class LootTable {
 					? chosenItem.quantity()
 					: chosenItem.quantity
 		};
+	}
+	addRDT(weight) {
+		/* runes and ammunition */
+		this.add(Items.natureRune, weight / 42.67, 67)
+		this.add(Items.adamantJavelin, weight / 64, 20)
+		this.add(Items.deathRune, weight / 64, 45)
+		this.add(Items.lawRune, weight / 64, 45)
+		this.add(Items.runeArrow, weight / 64, 42)
+		this.add(Items.steelArrow, weight / 64, 150)
+
+		/* weapons & armor */
+		this.add(Items.rune2hSword, weight / 42.67)
+		this.add(Items.runeBattleaxe, weight / 42.67)
+		this.add(Items.runeSqShield, weight / 64)
+		this.add(Items.dragonMedHelm, weight / 128)
+		this.add(Items.runeKiteshield, weight / 128)
+
+		/* other */
+		this.add(Items.coins, weight / 6.095, 3000)
+		this.add(Items.loopHalfOfKey, weight / 6.4)
+		this.add(Items.toothHalfOfKey, weight / 6.4)
+		this.add(Items.runiteBar, weight / 25.6)
+		this.add(Items.dragonstone, weight / 64)
+		this.add(Items.silverOre, weight / 64, 100)
+
+		/* subtables */
+
+		// gem table
+
+		this.add(Items.uncutSapphire, weight / 42.67, 67)
+		this.add(Items.uncutEmerald, weight / 42.67, 67)
+		this.add(Items.uncutRuby, weight / 42.67, 67)
+		this.add(Items.natureTalisman, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.runeJavelin, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+		this.add(Items.uncutDiamond, weight / 42.67, 67)
+
+		}
 	}
 };
